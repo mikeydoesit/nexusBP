@@ -19,8 +19,7 @@ module.exports = {
       darkGrey: '#d3d4d9',
     },
     gridTemplateColumns: {
-      'home_container': '3fr 2fr',
-      'cashflow_statement': ''
+      'home_container': '3fr 2fr'
     },
     gridTemplateRows: {
       'tapbarmenu': '100%'

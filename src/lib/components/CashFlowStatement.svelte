@@ -2,56 +2,704 @@
     import { fade } from 'svelte/transition'
 </script>
 <style>
-    .cashflow_statement_wrapper {
-        background-color: rgba(255, 255, 255, 0.85);
-        @apply w-full h-auto p-10;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 3px 6px 1px rgba(0,0,0,0.16);
-    }
-    .cashflow_statement {
-        @apply grid grid-cols-cashflow_statement;
-    }
-    .cashflow_statement_inflows {
-        @apply mb-16 overflow-x-scroll;
-    }
-    .cashflow_statement_liabilities {
-        @apply mb-8;
-    }
-    .align-left {
-        @apply text-left;
-    }
-    .align-center {
-        @apply text-center;
-    }
-    .grey-bg {
+table {
+    max-width: none;
+    width: 100%;
+    min-width:900px;
+}
+td,
+th {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.headcol {
+  @apply sticky w-auto left-0 top-auto text-left pl-4 pr-8 py-3 bg-grey;
+  /*only relevant for first row*/
+}
+.long {
+  @apply p-2 text-center;
+}
+.cashflow_statement_wrapper {
+    background-color: rgba(255, 255, 255, 0.85);
+    @apply w-full h-auto p-10;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 3px 6px 1px rgba(0,0,0,0.16);
+}
+.cashflow_statement {
+    @apply relative;
+    overflow-x: scroll;
+    overflow-y: visible;
+}
+h1 {
+    @apply uppercase text-center text-xl mb-8;
+}
+.empty_row {
+    @apply w-[webkit-fill-available] bg-grey;
+}
+.empty_row .headcol {
     @apply bg-grey;
-    }
-    .label {
-        @apply font-extralight text-[0.75rem] italic;
-    }
-    th, td {
-    @apply py-2 px-3;
-    }
-    th {
-        @apply font-semibold;
-    }
-    td {
-        @apply font-light;
-    }
-    h1 {
-        @apply uppercase text-center text-xl mb-8;
-    }
-    h3 {
-        @apply text-left text-lg;
-    }
+}
+.empty_row .long {
+    @apply py-0;
+}
+.empty_cell {
+    @apply p-0;
+}
+.month {
+    @apply text-center;
+}
+.year {
+    @apply text-center pb-0;
+}
+
 </style>
 
 <div class="cashflow_statement_wrapper" in:fade>
     <h1>Cash Flow Statement</h1>
-
     <div class="cashflow_statement">
+        <table>
+            <tr class="empty_row">
+                <th class="headcol"></th>
+                <td colspan="24" class="year">2023</td>
+                <td colspan="24" class="year">2024</td>
+            </tr>
+            <tr class="empty_row" >
+                <th class="headcol"></th>
+                <td colspan="2" class="long">JAN</td>
+                <td colspan="2" class="long">FEB</td>
+                <td colspan="2" class="long">MAR</td>
+                <td colspan="2" class="long">APR</td>
+                <td colspan="2" class="long">MAY</td>
+                <td colspan="2" class="long">JUN</td>
+                <td colspan="2" class="long">JUL</td>
+                <td colspan="2" class="long">AUG</td>
+                <td colspan="2" class="long">SEP</td>
+                <td colspan="2" class="long">OCT</td>
+                <td colspan="2" class="long">NOV</td>
+                <td colspan="2" class="long">DEC</td>
+                <td colspan="2" class="long">JAN</td>
+                <td colspan="2" class="long">FEB</td>
+                <td colspan="2" class="long">MAR</td>
+                <td colspan="2" class="long">APR</td>
+                <td colspan="2" class="long">MAY</td>
+                <td colspan="2" class="long">JUN</td>
+                <td colspan="2" class="long">JUL</td>
+                <td colspan="2" class="long">AUG</td>
+                <td colspan="2" class="long">SEP</td>
+                <td colspan="2" class="long">OCT</td>
+                <td colspan="2" class="long">NOV</td>
+                <td colspan="2" class="long">DEC</td>
+            </tr>
+            <tr class="empty_row">
+                <th class="headcol"></th>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+                <td class="long">T</td>
+                <td class="long">A</td>
+            </tr>
+            <tr class="empty_row" >
+                <th class="headcol">Income</th>
+                <td colspan="48" class="empty_cell"></td>
+            </tr>
 
+            <tr>
+                <th class="headcol">Rental Income</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+            </tr>
+             <tr>
+                <th class="headcol">Other Income</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+            </tr>
+            <tr>
+                <th class="headcol">Total Income</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+            </tr>
+            <tr class="empty_row" >
+                <th class="headcol">Expenses</th>
+                <td class="long" colspan="48"><td>
+            </tr>
+            <tr>
+                <th class="headcol">Direct Costs</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+            </tr>
+            <tr>
+                <th class="headcol">Indirect Costs</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+            </tr>
+            <tr>
+                <th class="headcol">Total Expenses</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">0</td>
+                <td class="long">-</td>
+                <td class="long">200</td>
+                <td class="long">-</td>
+            </tr>
+            <tr>
+                <th class="headcol">Net Cash Flow</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1200</td>
+                <td class="long">-</td>
+                <td class="long">1000</td>
+                <td class="long">-</td>
+            </tr>
+            <tr>
+                <th class="headcol">Beginning Cash Balance</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">8000</td>
+                <td class="long">-</td>
+                <td class="long">9200</td>
+                <td class="long">-</td>
+                <td class="long">10400</td>
+                <td class="long">-</td>
+                <td class="long">11400</td>
+                <td class="long">-</td>
+                <td class="long">12600</td>
+                <td class="long">-</td>
+                <td class="long">13800</td>
+                <td class="long">-</td>
+                <td class="long">14800</td>
+                <td class="long">-</td>
+                <td class="long">16000</td>
+                <td class="long">-</td>
+                <td class="long">17200</td>
+                <td class="long">-</td>
+                <td class="long">18200</td>
+                <td class="long">-</td>
+                <td class="long">19400</td>
+                <td class="long">-</td>
+                <td class="long">20600</td>
+                <td class="long">-</td>
+                <td class="long">21600</td>
+                <td class="long">-</td>
+                <td class="long">22800</td>
+                <td class="long">-</td>
+                <td class="long">8500</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+            </tr>
+            <tr>
+                <th class="headcol">Ending Cash Balance</th>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">9200</td>
+                <td class="long">-</td>
+                <td class="long">10400</td>
+                <td class="long">-</td>
+                <td class="long">11400</td>
+                <td class="long">-</td>
+                <td class="long">12600</td>
+                <td class="long">-</td>
+                <td class="long">13800</td>
+                <td class="long">-</td>
+                <td class="long">14800</td>
+                <td class="long">-</td>
+                <td class="long">16000</td>
+                <td class="long">-</td>
+                <td class="long">17200</td>
+                <td class="long">-</td>
+                <td class="long">18200</td>
+                <td class="long">-</td>
+                <td class="long">19400</td>
+                <td class="long">-</td>
+                <td class="long">20600</td>
+                <td class="long">-</td>
+                <td class="long">21600</td>
+                <td class="long">-</td>
+                <td class="long">22800</td>
+                <td class="long">-</td>
+                <td class="long">24000</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+                <td class="long">-</td>
+            </tr>
+        </table>
     </div>
+
+
+    <!-- <div class="cashflow_statement">
+        <table>
+            <tr>
+                <td rowspan="4" colspan="1"></td>
+                <td colspan="24" rowspan="2">2023</td>
+                <td colspan="24" rowspan="2">2024</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td colspan="2">Jan</td>
+                <td colspan="2">Feb</td>
+                <td colspan="2">Mar</td>
+                <td colspan="2">Apr</td>
+                <td colspan="2">May</td>
+                <td colspan="2">Jun</td>
+                <td colspan="2">Jul</td>
+                <td colspan="2">Aug</td>
+                <td colspan="2">Sep</td>
+                <td colspan="2">Oct</td>
+                <td colspan="2">Nov</td>
+                <td colspan="2">Dec</td>
+                <td colspan="2">Jan</td>
+                <td colspan="2">Feb</td>
+                <td colspan="2">Mar</td>
+                <td colspan="2">Apr</td>
+                <td colspan="2">May</td>
+                <td colspan="2">Jun</td>
+                <td colspan="2">Jul</td>
+                <td colspan="2">Aug</td>
+                <td colspan="2">Sep</td>
+                <td colspan="2">Oct</td>
+                <td colspan="2">Nov</td>
+                <td colspan="2">Dec</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+                <td>T</td>
+                <td>A</td>
+            </tr>
+        </table>
+    </div> -->
 
     
     <!-- Cash Inflows -->
@@ -209,9 +857,9 @@
         </tr>
         <tr class="grey-bg">
             <th class="align-left">Director's equity</th>
-            <td class="align-center">3000</td>
+            <td class="align-center">12000</td>
             <td class="align-center">-</td>
-            <td class="align-center">3000</td>
+            <td class="align-center">12000</td>
             <td class="align-center">-</td>
         </tr>
         <tr>
